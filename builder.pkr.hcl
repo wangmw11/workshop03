@@ -10,7 +10,7 @@ variable droplet_image{
 
 variable droplet_size{
     type = string
-    default = "s-1vcpu-1gb"
+    default = "s-1vcpu-2gb"
 }
 
 variable droplet_region{
@@ -23,7 +23,7 @@ source digitalocean mydroplet{
     region = var.droplet_region
     image = var.droplet_image
     size = var.droplet_size
-    snapshot_name= "mydroplet"
+    snapshot_name= "codeserver_ver2"
     ssh_username = "root"
 }
 
