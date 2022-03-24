@@ -58,7 +58,9 @@ resource digitalocean_droplet code-server {
     // Restart nginx cause we have updated the configuration
     provisioner remote-exec {
         inline = [
-            "systemctl restart nginx"
+            "systemctl daemon-reload",
+            "systemctl restart nginx",
+            "systemctl restart code-server"
         ]
     }
 }
